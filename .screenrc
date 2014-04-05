@@ -1,0 +1,31 @@
+##Copied from Abhas Bhaiya's blog, http://aadrit.com/2012/03/31/my-screen-habits/
+
+# Don't display the initial screen startup message
+startup_message off
+
+# _Virtual bell OFF
+vbell off 
+
+# I don't want any default name for my shells
+shelltitle ''
+
+# This should be a large enough scrollback buffer
+defscrollback 100240
+
+# I want to start counting my screen windows from 1 - not 0
+bind c screen 1
+bind 0 select 10
+
+# Use Ctrl - a as the escape sequence
+escape ^aa 
+
+# Use Alt-<> (ie. Alt-,.) to shift between screens
+bindkey "^[<" eval number !echo $WINDOW-1|bc
+bindkey "^[>" eval number !echo $WINDOW+1|bc
+bindkey "^[," prev
+bindkey "^[." next
+
+# My caption: A light Grey line with black text and red highligts
+caption always "%{= Wk}%-Lw%{= wr}%n%f %t %{= WK}%+Lw %-=| %{USER}@%H | %M%d %c%{-}"
+
+
